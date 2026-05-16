@@ -1,0 +1,4 @@
+;/*FB_PKG_DELIM*/
+
+__d("StickerStoreFalcoEvent",["FalcoLoggerInternal","getFalcoLogPolicy_DO_NOT_USE"],(function(t,n,r,o,a,i,l){"use strict";var e=r("getFalcoLogPolicy_DO_NOT_USE")("1744388"),s=o("FalcoLoggerInternal").create("sticker_store",e),u=s;l.default=u}),98);
+__d("logStickersFlyoutHasOpened",["StickerStoreFalcoEvent"],(function(t,n,r,o,a,i,l){"use strict";function e(){r("StickerStoreFalcoEvent").log(function(){return{event:"open_tray"}})}l.default=e}),98);

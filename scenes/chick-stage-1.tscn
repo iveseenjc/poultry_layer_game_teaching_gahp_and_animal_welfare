@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dtrdwifh5c4a7"]
+
+[ext_resource type="Script" uid="uid://cjqj7udy5hgan" path="res://scripts/core/ChickBehaviour.cs" id="1_00vrv"]
+[ext_resource type="ArrayMesh" uid="uid://wbsvnkpru4up" path="res://models/chick-stage-1.obj" id="1_qaiu8"]
+[ext_resource type="Script" uid="uid://2l1c5n6b2f3j" path="res://scripts/ChickInteract.cs" id="3_3dmas"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d2op2"]
+height = 0.5
+radius = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_of470"]
+size = Vector3(0.8, 0.8, 0.90000004)
+
+[node name="Chick" type="CharacterBody3D" unique_id=440846506 node_paths=PackedStringArray("NameOverlay")]
+script = ExtResource("1_00vrv")
+NameOverlay = NodePath("Label3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2130094482]
+cast_shadow = 0
+mesh = ExtResource("1_qaiu8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MeshInstance3D" unique_id=1066899892]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1763682977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("CylinderShape3D_d2op2")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=344718092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+visible = false
+billboard = 1
+text = "Chicken 1"
+
+[node name="InputArea3D" type="Area3D" parent="." unique_id=167575104 node_paths=PackedStringArray("ChickMesh", "NameOverlay")]
+script = ExtResource("3_3dmas")
+ChickMesh = NodePath("../MeshInstance3D")
+NameOverlay = NodePath("../Label3D")
+OutlineShaderPath = "uid://dbdvwdvk36pyx"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InputArea3D" unique_id=1510222833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9802322e-08, 0.4, -0.049999967)
+shape = SubResource("BoxShape3D_of470")

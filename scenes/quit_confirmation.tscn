@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://ek43jxr2ipfe"]
+
+[ext_resource type="Script" uid="uid://cbidxeferkibt" path="res://scripts/ui/QuitConfirmation.cs" id="1_em3st"]
+[ext_resource type="Theme" uid="uid://bss6lcvvd88fr" path="res://resources/themes/new_theme.tres" id="1_u8427"]
+
+[node name="QuitConfirmation" type="CanvasLayer" unique_id=396503780]
+process_mode = 3
+layer = 128
+
+[node name="QuitConfimationPanel" type="PanelContainer" parent="." unique_id=718126278 node_paths=PackedStringArray("YesButton", "NoButton")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_u8427")
+script = ExtResource("1_em3st")
+YesButton = NodePath("VBoxContainer/HBoxContainer/YesButton")
+NoButton = NodePath("VBoxContainer/HBoxContainer/NoButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuitConfimationPanel" unique_id=1952905301]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ConfirmationMessage" type="Label" parent="QuitConfimationPanel/VBoxContainer" unique_id=1224476288]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "ARE YOU SURE YOU WANT TO QUIT?"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuitConfimationPanel/VBoxContainer" unique_id=547296212]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="YesButton" type="Button" parent="QuitConfimationPanel/VBoxContainer/HBoxContainer" unique_id=1647200987]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("1_u8427")
+theme_override_colors/font_color = Color(0.5414473, 1, 0.5212748, 1)
+text = "YES"
+
+[node name="NoButton" type="Button" parent="QuitConfimationPanel/VBoxContainer/HBoxContainer" unique_id=525318644]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("1_u8427")
+theme_override_colors/font_color = Color(0.9170456, 0, 0.30727088, 1)
+text = "NO"

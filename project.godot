@@ -1,0 +1,56 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Poultry Layer Game Teaching GAHP and Animal Welfare"
+run/main_scene="uid://s6kyeejhb53q"
+config/quit_on_go_back=false
+config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+config/icon="uid://1sjfmq3fys53"
+
+[autoload]
+
+GameClock="*uid://dcy7fokn42v75"
+QuitConfirmation="*uid://ek43jxr2ipfe"
+EventBus="*uid://cwbtdeyfwv0rt"
+
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=576
+window/size/borderless=true
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="Poultry Layer Game Teaching GAHP and Animal Welfare"
+
+[gui]
+
+theme/custom="uid://bss6lcvvd88fr"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=3

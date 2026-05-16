@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://nxqxrtivkdnv"]
+
+[ext_resource type="Theme" uid="uid://bss6lcvvd88fr" path="res://resources/themes/new_theme.tres" id="1_ss2rk"]
+[ext_resource type="Script" uid="uid://c6vi4cdmtorvx" path="res://scripts/ui/UIChickStats.cs" id="2_8ouiu"]
+[ext_resource type="Texture2D" uid="uid://gyetsq3px8au" path="res://images/ui/panel_background.png" id="3_8ouiu"]
+[ext_resource type="Texture2D" uid="uid://bxq8rpswne8ti" path="res://images/Wheat_Seeds_JE1_BE1.png" id="4_cb7rl"]
+[ext_resource type="Texture2D" uid="uid://dkkouuocl0wyl" path="res://images/Water_Bucket_JE2_BE2.png" id="5_tcplv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d84kj"]
+texture = ExtResource("3_8ouiu")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d84kj"]
+bg_color = Color(0.5883464, 0, 0.1363174, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cb7rl"]
+bg_color = Color(0.34567758, 0, 0.0647573, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tcplv"]
+bg_color = Color(0.9999086, 0.25323093, 0.33515036, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82qrc"]
+bg_color = Color(0.19553365, 0.19553365, 0.19553365, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmpex"]
+bg_color = Color(0.9999086, 0.25323093, 0.33515036, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="ChickStatsUI" type="Control" unique_id=2086288105 node_paths=PackedStringArray("ChickNameLabel", "ChickWeightLabel", "ChickStageLabel", "HungerBar", "ThirstBar", "FeedButton", "DrinkButton", "CloseButton")]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ss2rk")
+script = ExtResource("2_8ouiu")
+ChickNameLabel = NodePath("PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer/ChickNameLabel")
+ChickWeightLabel = NodePath("PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer/ChickWeightLabel")
+ChickStageLabel = NodePath("PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer/ChickStageLabel")
+HungerBar = NodePath("PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer/HungerBar")
+ThirstBar = NodePath("PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer/ThirstBar")
+FeedButton = NodePath("PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/FeedButton")
+DrinkButton = NodePath("PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/WaterButton")
+CloseButton = NodePath("PanelContainer2/PanelContainer/CloseButton")
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=1420621467]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer2" unique_id=1282670220]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_d84kj")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2/PanelContainer" unique_id=1775939270]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/PanelContainer/MarginContainer" unique_id=558114070]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=2042997575]
+layout_mode = 2
+columns = 2
+
+[node name="NameLabel" type="Label" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=2735922]
+layout_mode = 2
+text = "Name: "
+
+[node name="ChickNameLabel" type="Label" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1456913031]
+layout_mode = 2
+text = "Chicken 1"
+
+[node name="WeightLabel" type="Label" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=580366152]
+layout_mode = 2
+text = "Weight: "
+
+[node name="ChickWeightLabel" type="Label" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1665459889]
+layout_mode = 2
+text = "0kg"
+
+[node name="StageLabel" type="Label" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=890187526]
+layout_mode = 2
+text = "Stage: "
+
+[node name="ChickStageLabel" type="Label" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1200924237]
+layout_mode = 2
+text = "Chick"
+
+[node name="HungerLabel" type="Label" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=93625927]
+layout_mode = 2
+text = "Hunger: "
+
+[node name="HungerBar" type="ProgressBar" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=734586920]
+layout_mode = 2
+
+[node name="ThirstLabel" type="Label" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1942966544]
+layout_mode = 2
+text = "Thirst: "
+
+[node name="ThirstBar" type="ProgressBar" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1408165406]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=14952647]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=57865079]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="FeedButton" type="TextureButton" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=955968312]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture_normal = ExtResource("3_8ouiu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/FeedButton" unique_id=1839109979]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_cb7rl")
+expand_mode = 1
+
+[node name="WaterButton" type="TextureButton" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=533796134]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture_normal = ExtResource("3_8ouiu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/WaterButton" unique_id=821274333]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_tcplv")
+expand_mode = 1
+
+[node name="CloseButton" type="Button" parent="PanelContainer2/PanelContainer" unique_id=128349078]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_d84kj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cb7rl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tcplv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_82qrc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fmpex")
+text = "X"
